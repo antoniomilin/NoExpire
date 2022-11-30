@@ -1,11 +1,16 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { createItem } from '../features/items/itemSlice'
+import { useNavigate } from 'react-router-dom'
 
 function ItemForm() {
   const [text, setText] = useState('')
 
   const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const navigatetoDashboard = () => {
+    navigate('/')
+  }
 
   const onSubmit = (e) => {
     e.preventDefault()
@@ -26,17 +31,9 @@ function ItemForm() {
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
-          <label htmlFor='text'>Expiration Date</label>
-          <input
-            type='text'
-            name='text'
-            id='text'
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-          />
         </div>
         <div className='form-group'>
-          <button className='btn btn-block' type='submit'>
+          <button onClick = {navigatetoDashboard} className='btn btn-block' type='submit'>
             +
           </button>
         </div>

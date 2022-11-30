@@ -7,12 +7,8 @@ const listSchema = mongoose.Schema(
       required: true,
       ref: 'User',
     },
-    listSize: {
-      type: Number,
-      required: [true, 'Please add a text value'],
-    },
-    itemID: {
-      type: String,
+    foodList: {
+      type: [Foods],
       required: [true, 'Please add a text value'],
     },
   },

@@ -3,12 +3,17 @@ import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import ItemForm from '../components/ItemForm'
 import ItemItem from '../components/ItemItem'
+import AddFood from './AddFood'
 import Spinner from '../components/Spinner'
 import { getItems, reset } from '../features/items/itemSlice'
 
 function Dashboard() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
+
+  const navigateAddFood = () => {
+    navigate('/AddFood');
+  };
 
   const { user } = useSelector((state) => state.auth)
   const { items, isLoading, isError, message } = useSelector(
@@ -43,7 +48,7 @@ function Dashboard() {
       </section>
 
       <div className='form-group'>
-          <button type='submit' className='btn btn-block'>
+          <button className='btn' onClick={navigateAddFood}>
               +
           </button>
       </div>

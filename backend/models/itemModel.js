@@ -7,23 +7,7 @@ const itemSchema = mongoose.Schema(
       required: true,
       ref: 'User',
     },
-    itemID: {
-      type: Number,
-      required: [true, 'Please add a text value'],
-    },
-    itemName: {
-      type: String,
-      required: [true, 'Please add a text value'],
-    },
-    inputDate: {
-      type: Date,
-      required: [true, 'Please add a text value'],
-    },
-    expireDate: {
-      type: Date,
-      required: [true, 'Please add a text value'],
-    },
-    image: {
+    text: {
       type: String,
       required: [true, 'Please add a text value'],
     },
