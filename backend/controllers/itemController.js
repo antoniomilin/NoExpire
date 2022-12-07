@@ -62,6 +62,7 @@ const updateItem = asyncHandler(async (req, res) => {
 // @desc    Delete item
 // @route   DELETE /api/items/:id
 // @access  Private
+
 const deleteItem = asyncHandler(async (req, res) => {
   const item = await Item.findById(req.params.id)
 
